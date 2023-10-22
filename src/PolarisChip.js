@@ -19,20 +19,19 @@ export class PolarisChip extends LitElement {
         .link:focus,
         .link:hover,
         :host([active]) .link{
-          background-color: #e4e5e7;
-          border: 2px solid #e4e5e7;
+          background-color: #7ac6ff;
+          border: 2px solid #8acdff;
           border-radius: 2px;
-          color: #005fa9;
+          color: #ffffff;
           cursor: pointer;
-          text-decoration: underline;
         }
         
         .link {
           font-weight:bold;
           text-decoration:none;
-          padding: 8px 4px;
-          border: 2px solid #444;
-          color: #444;
+          padding: 0.75rem 1rem 0.75rem 1.5rem;
+          border: 2px solid ##005fa9;
+          color: #005fa9;
           font-size: 16px;
         }
     `;
