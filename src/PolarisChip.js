@@ -1,3 +1,4 @@
+
 import { LitElement, html, css } from 'lit';
 
 export class PolarisChip extends LitElement {
@@ -6,6 +7,11 @@ export class PolarisChip extends LitElement {
       name: { type: String },
       link: {type: String},
       active: {type: Boolean, reflect: true}
+      /*
+      light: {type: Boolean, reflect: true}
+      tint: {type: Boolean, reflect: true}
+      dark: {type: Boolean, reflect: true}
+      */
     };
   }
 
@@ -24,7 +30,6 @@ export class PolarisChip extends LitElement {
           border-radius: 2px;
           color: #005fa9;
           cursor: pointer;
-          text-decoration: underline;
         }
         
         .link {
@@ -48,3 +53,4 @@ export class PolarisChip extends LitElement {
     return html`<a class="link" href="${this.link}"><slot>${this.name}</slot></a>`;
   }
 }
+
