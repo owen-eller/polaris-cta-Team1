@@ -5,39 +5,37 @@ export class PolarisChip extends LitElement {
     return {
       name: { type: String },
       link: {type: String},
-      active: {type: Boolean, reflect: true},
-      filled: {type: Boolean, reflect: true}
+      head: {type: String},
+      outline: {type: Boolean, reflect: true},
+      filled: {type: Boolean, reflect: true},
+      tinted: {type: Boolean, reflect: true},
+      lightoutline: {type: Boolean, reflect: true},
+      lightfill: {type: Boolean, reflect: true}
     };
   }
 
   static get styles() {
     return css`
       :host {
-        display: inline-flex;
-        margin: 0 12px 12px 0;
+        display: inline-block;
         justify-content: center;
         padding: 1rem 1rem;
-        text-align: center
+        text-align: center;
       }
 
-        .link:focus,
-        .link:hover,
-        :host([active]) .link{
-          background-color: #005fa9;
-          border: 2px solid #005fa9;
-          border-radius: 2px;
-          color: #ffffff;
-          cursor: pointer;
-        }
+      p {
+        display: inline-flex;
+        font-weight: 700;
+      }
 
-        :host([filled]) .link:hover{
-          background-color: black;
-          border: 2px solid #005fa9;
-          border-radius: 2px;
-          color: #ffffff;
-          cursor: pointer;
-        }
-        
+      a {
+        font-style: italic;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 32px;
+        padding: 12px 32px;
+      }
+
         .link {
           font-weight:bold;
           text-decoration:none;
@@ -46,16 +44,85 @@ export class PolarisChip extends LitElement {
           color: #005fa9;
           font-size: 16px;
         }
+
+        :host([outline]) .link{
+          background-color: #ffffff;
+          border: 2px solid #005fa9;
+          border-radius: 2px;
+          color: #005fa9;
+          cursor: pointer;
+        }
+        
+        :host([outline]) .link:hover{
+          background-color: #005fa9;
+          border: 2px solid #005fa9;
+          border-radius: 2px;
+          color: #ffffff;
+          cursor: pointer;
+        }
+
+        :host([filled]) .link{
+          background-color: #005fa9;
+          border: 2px solid #005fa9;
+          color: #ffffff;
+          cursor: pointer;
+        }
+
+        :host([filled]) .link:hover{
+          background-color: #ffffff;
+          border: 2px solid #005fa9;
+          color: #005fa9;
+        }
+
+        :host([tinted]) .link{
+          border: 2px solid #ffffff;
+          background-color: #4f627c;
+          color: #b0e1ff;
+        }
+
+        :host([tinted]) .link:hover{
+          border: 2px solid #b0e1ff;
+          background-color: #ffffff;
+          color: #4f627c;
+          border-radius: 2px;
+        }
+        
+        :host([lightoutline]) .link{
+          border: 2px solid #ffffff;
+          background-color: #001e44;
+          color: #ccf0ff;
+        }
+
+        :host([lightoutline]) .link:hover{
+          border: 2px solid #F0BF4C;
+          background-color: #F0BF4C;
+          color: #001e44;
+          border-radius: 2px;
+        }
+
+        :host([lightfilled]) .link{
+          border: 2px solid #ccf0ff;
+          background-color: #ccf0ff;
+          color: #001e44;
+        }
+
+        :host([lightfilled]) .link:hover{
+          background: gradient(linear,left top, left bottom,color-stop(1%, #009cde),color-stop(66%, #1b5c99),to(#1e407c));
+          background: linear-gradient(to bottom,#009cde 1%,#1b5c99 66%,#1e407c 100%);
+          color: #ffffff;
+          border-radius: 2px;
+        }
     `;
   }
 
   constructor() {
     super();
-    this.name = 'Football';
-    this.link= "https://www.psu.edu/news/research/";
+    this.name = 'SUBSCRIBE >';
+    this.link= "https://headlines.psu.edu";
   }
 
   render() {
-    return html`<a class="link" href="${this.link}"><slot>${this.name}</slot></a>`;
+    return html`
+        <a class="link" href="${this.link}"><slot>${this.name}</slot></a>`;
   }
 }
