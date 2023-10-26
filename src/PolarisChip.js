@@ -56,8 +56,9 @@ export class PolarisChip extends LitElement {
           color: #005fa9;
           cursor: pointer;
         }
-        
-        :host([outline]) .link:hover{
+
+        :host([outline]) .link:hover,
+        :host([outline]) .link:focus{
           background-color: #005fa9;
           border: 2px solid #005fa9;
           border-radius: 2px;
@@ -72,7 +73,8 @@ export class PolarisChip extends LitElement {
           cursor: pointer;
         }
 
-        :host([filled]) .link:hover{
+        :host([filled]) .link:hover,
+        :host([filled]) .link:focus{
           background-color: #ffffff;
           border: 2px solid #005fa9;
           color: #005fa9;
@@ -84,7 +86,8 @@ export class PolarisChip extends LitElement {
           color: #b0e1ff;
         }
 
-        :host([tinted]) .link:hover{
+        :host([tinted]) .link:hover,
+        :host([tinted]) .link:focus{
           border: 2px solid #b0e1ff;
           background-color: #ffffff;
           color: #4f627c;
@@ -97,7 +100,8 @@ export class PolarisChip extends LitElement {
           color: #ccf0ff;
         }
 
-        :host([lightoutline]) .link:hover{
+        :host([lightoutline]) .link:hover,
+        :host([lightoutline]) .link:focus{
           border: 2px solid #F0BF4C;
           background-color: #F0BF4C;
           color: #001e44;
@@ -110,7 +114,8 @@ export class PolarisChip extends LitElement {
           color: #001e44;
         }
 
-        :host([lightfilled]) .link:hover{
+        :host([lightfilled]) .link:hover,
+        :host([lightfilled]) .link:focus{
           border: 2px solid #001e44;
           background: gradient(linear,left top, left bottom,color-stop(1%, #009cde),color-stop(66%, #1b5c99),to(#1e407c));
           background: linear-gradient(to bottom,#009cde 1%,#1b5c99 66%,#1e407c 100%);
@@ -122,12 +127,12 @@ export class PolarisChip extends LitElement {
 
   constructor() {
     super();
-    this.name = 'SUBSCRIBE >';
+    this.name = 'SUBSCRIBE';
     this.link= "https://headlines.psu.edu";
   }
 
   render() {
     return html`
-        <a class="link" href="${this.link}"><slot>${this.name}</slot></a>`;
+        <a class="link" href="${this.link}"><slot>${this.name}</slot><slot>${" >"}</slot></a>`;
   }
 }
