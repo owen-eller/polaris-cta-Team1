@@ -8,22 +8,43 @@
   <base href="/">
 
   <style>
+
+    .tinted {
+      background-color: rgb(154, 154, 154);
+    }
+
     html,
     body {
       margin: 0;
-      padding: 0;
+      padding: 0; 
       font-family: sans-serif;
       background-color: #ffffff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
     }
   </style>
   <title>polaris-chip</title>
 </head>
 
 <body>
-  <div>
-  <head>GET THE NEWS BY EMAIL</head>
-  <polaris-chip name="SUBSCRIBE>" link="https://headlines.psu.edu"></polaris-chip></div>
+  <div><head>GET THE NEWS BY EMAIL</head>
+  <polaris-chip name="SUBSCRIBE" link="https://headlines.psu.edu"></polaris-chip></div>
+
+  <div><head>GET THE NEWS BY EMAIL</head>
+  <polaris-chip filled name="SUBSCRIBE" link="https://headlines.psu.edu"></polaris-chip></div>
   
+  <div class="tinted"><head>GET THE NEWS BY EMAIL</head>
+  <polaris-chip name="SUBSCRIBE" link="https://headlines.psu.edu"></polaris-chip></div>
+
+  <div><head>GET THE NEWS BY EMAIL</head>
+  <polaris-chip name="SUBSCRIBE" link="https://headlines.psu.edu"></polaris-chip></div>
+
+  <div><head>GET THE NEWS BY EMAIL</head>
+  <polaris-chip name="SUBSCRIBE" link="https://headlines.psu.edu"></polaris-chip></div>
 
   <script type="module" src="./src/polaris-chip.js"></script>
 </body>
