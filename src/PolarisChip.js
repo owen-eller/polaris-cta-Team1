@@ -24,8 +24,12 @@ export class PolarisChip extends LitElement {
       }
 
       p {
-        display: inline-flex;
-        font-weight: 700;
+        font-style: bold;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
       }
 
       a {
@@ -107,6 +111,7 @@ export class PolarisChip extends LitElement {
         }
 
         :host([lightfilled]) .link:hover{
+          border: 2px solid #001e44;
           background: gradient(linear,left top, left bottom,color-stop(1%, #009cde),color-stop(66%, #1b5c99),to(#1e407c));
           background: linear-gradient(to bottom,#009cde 1%,#1b5c99 66%,#1e407c 100%);
           color: #ffffff;
