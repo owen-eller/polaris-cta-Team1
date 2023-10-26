@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -9,18 +8,53 @@
   <base href="/">
 
   <style>
+
+    .tint {
+      background-color: rgb(154, 154, 154);
+    }
+
+    .light {
+      background-color: #001e44;
+      color: white;
+    }
+
+    .wrapper {
+      padding: 16px;
+      display: flex;
+      border: 2px solid black;
+      margin: 8px;
+    }
+
     html,
     body {
-      margin: 0;
-      padding: 0;
       font-family: sans-serif;
-      background-color: #ededed;
+      background-color: #ffffff;
     }
   </style>
   <title>polaris-chip</title>
 </head>
 
 <body>
+  <div class="wrapper">
+    <p>GET THE NEWS BY EMAIL</p>
+  <polaris-chip outline></polaris-chip></div>
+
+  <div class="wrapper">
+    <p>GET THE NEWS BY EMAIL</p>
+  <polaris-chip filled></polaris-chip></div>
+
+  <div class="wrapper tint">
+    <p>GET THE NEWS BY EMAIL</p>
+  <polaris-chip tinted></polaris-chip></div>
+
+  <div class="wrapper light">
+    <p>GET THE NEWS BY EMAIL</p>
+  <polaris-chip lightoutline></polaris-chip></div>
+
+  <div class="wrapper light">
+    <p>GET THE NEWS BY EMAIL</p>
+  <polaris-chip lightfilled></polaris-chip></div>
+
   <script type="module" src="./src/polaris-chip.js"></script>
 </body>
 
