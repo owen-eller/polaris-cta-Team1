@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class PolarisChip extends LitElement {
+export class PolarisCta extends LitElement {
   static get properties() {
     return {
       name: { type: String },
